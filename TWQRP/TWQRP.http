@@ -1,0 +1,6 @@
+@TWQRP_HostAddress = http://localhost:5042
+
+GET {{TWQRP_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
