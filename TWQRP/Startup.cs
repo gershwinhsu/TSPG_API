@@ -38,12 +38,16 @@ namespace TWQRP
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseSwagger();
-            app.UseSwaggerUI(c =>
+            // Swagger 僅於開發環境開放，避免正式環境暴露 API 文件
+            if (env.IsDevelopment())
             {
-                c.SwaggerEndpoint("/swagger/v1/swagger.json", "TWQRP API v1");
-                c.RoutePrefix = string.Empty;
-            });
+                app.UseSwagger();
+                app.UseSwaggerUI(c =>
+                {
+                    c.SwaggerEndpoint("/swagger/v1/swagger.json", "TWQRP API v1");
+                    c.RoutePrefix = string.Empty;
+                });
+            }
 
             app.UseHttpsRedirection();
             app.UseRouting();
