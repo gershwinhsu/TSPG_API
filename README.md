@@ -60,3 +60,4 @@ POST http://localhost:5042/api/App/AppInfo
 |------|------|------|
 | 2026/06/02 | `main` | 初始建立 TWQRP .NET 8 / C# 7.3 OpenAPI 專案，新增 POST /api/App/AppInfo 端點，回傳 API 名稱、建置日期及版本號 |
 | 2026/06/02 | `docs/add-readme` | 新增 README.md，說明專案簡介、啟動方式及 API 端點使用範例 |
+| 2026/06/02 | `fix/code-review-improvements` | 套用程式碼審查改善：Swagger 限制開發環境、assembly.Location 防禦性處理、屬性預設值、Controller XML 摘要、static readonly 快取靜態資訊 |
